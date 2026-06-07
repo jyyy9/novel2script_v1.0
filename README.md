@@ -179,16 +179,22 @@ scenes:
 
 ```
 Novel2Script/
-├── main.py           # 命令行入口
-├── app.py            # Gradio 界面入口
-├── chapter_splitter.py   # 章节切分模块
-├── ai_converter.py       # AI 转换模块
-├── script_builder.py     # 剧本构建模块
-├── yaml_writer.py        # YAML 输出模块
-├── character_profile.py  # 角色卡处理模块
-├── requirements.txt      # 依赖列表
-├── README.md          # 项目说明
-└── SCHEMA.md          # 数据结构说明
+├── src/                    # 源代码包
+│   └── novel2script/       # 核心模块包
+│       ├── __init__.py     # 包初始化
+│       ├── chapter_splitter.py   # 章节切分模块
+│       ├── ai_converter.py       # AI 转换模块
+│       ├── script_builder.py     # 剧本构建模块
+│       ├── yaml_writer.py        # YAML 输出模块
+│       └── character_profile.py   # 角色卡处理模块
+├── examples/               # 示例文件
+│   ├── example.txt         # 示例小说文本
+│   └── characters.json     # 示例角色卡
+├── main.py                 # 命令行入口
+├── app.py                  # Gradio 界面入口
+├── requirements.txt        # 依赖列表
+├── README.md               # 项目说明
+└── SCHEMA.md               # 数据结构说明
 ```
 
 ## 📝 版本历史

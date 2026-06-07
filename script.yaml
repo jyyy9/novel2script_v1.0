@@ -1,122 +1,114 @@
 metadata:
   author: 未知作者
-  total_scenes: 6
+  total_scenes: 4
 scenes:
-- heading: 日内 江城老居民楼外
-  description: 雨夜，林晚棠站在巷口，昏黄的路灯下，老人突然出现。
+- heading: 日内 书房
+  description: 窗外雨声淅沥，林晚棠坐在窗前，手中的茶杯已经凉了。思绪飘回十年前的夜晚。
   elements:
   - type: action
-    description: 天空像撕开了一道口子，雨水倾盆而下。林晚棠提着半湿的行李箱站在巷口，昏黄的路灯下，等待着前往402室的新居。
+    description: 丫鬟小翠轻轻推门进来，手中端着一个食盒。
     element_id: A001
   - type: dialogue
-    character: 老人
-    line: 姑娘，找人啊？
-    parenthetical: （声音苍老，眼神亮净）
+    character: 小翠
+    line: 小姐，该用晚膳了。
+    parenthetical: ''
     element_id: D002
   - type: dialogue
     character: 林晚棠
-    line: 我租了这里的房子，402。
-    parenthetical: （试图展现勇气）
+    line: 放下吧，我还不饿。
+    parenthetical: ''
     element_id: D003
   - type: action
-    description: 老人深深看了林晚棠一眼，然后缓缓缩回窗户，留下一丝神秘的气息。
-    element_id: A004
-  scene_id: S001
-- heading: 日内 402室
-  description: 林晚棠进入新居，房间陈旧而潮湿，一系列诡异事件开始发生。
-  elements:
-  - type: action
-    description: 林晚棠打开门，进入402室，感受到房间的潮湿和霉味。
-    element_id: A001
-  - type: action
-    description: 她尝试打开窗帘，却被房门自行关上，随后又自行打开。
-    element_id: A002
-  - type: dialogue
-    character: 林晚棠
-    line: 没事的，老房子，风。
-    parenthetical: （试图安抚自己的恐惧）
-    element_id: D003
-  - type: action
-    description: 林晚棠进入卫生间洗漱，发现水龙头的水是铁锈色的。
+    description: 小翠把食盒放在桌上，忍不住说道。
     element_id: A004
   - type: dialogue
-    character: 小女孩（幽灵）
-    line: 姐姐，你看见我的眼睛了吗？
-    parenthetical: （声音细细，诡异）
+    character: 小翠
+    line: 小姐，您从傍晚就坐在这里发呆，茶都凉了两壶了。老爷要是知道……
+    parenthetical: ''
     element_id: D005
-  - type: action
-    description: 林晚棠惊恐地面对着卫生间门外的模糊影子，听到指甲刮玻璃的声音。
-    element_id: A006
-  scene_id: S002
-- heading: 日内 402室
-  description: 林晚棠回到自己的公寓，开始整理和改造房间。
-  elements:
-  - type: action
-    description: 林晚棠检查原来的锁，换上新锁，打扫卫生，更换窗帘，营造舒适的氛围。
-    element_id: A001
-  - type: action
-    description: 林晚棠洗澡换衣，坐在床上追剧，感到孤单但并不害怕。
-    element_id: A002
   - type: dialogue
     character: 林晚棠
-    line: 一切都会好的。
-    parenthetical: (自言自语)
-    element_id: D003
+    line: 老爷若是问起，就说我身子不适。
+    parenthetical: ''
+    element_id: D006
+  - type: action
+    description: 小翠欲言又止，最终只是叹了口气，悄悄退了出去。
+    element_id: A007
+  - type: action
+    description: 房门关上，林晚棠的目光再次落在窗外。梧桐叶在雨中沙沙作响，像是有人在低声诉说着什么。
+    element_id: A008
+  - type: action
+    description: 林晚棠轻声呢喃，手中无意识地握紧了一枚玉佩。
+    element_id: A009
+  - type: action
+    description: 那枚玉佩通体莹白，雕刻着一朵兰花，是十年前那个人临别时留给她的信物。
+    element_id: A010
+  - type: dialogue
+    character: 林晚棠
+    line: 等我回来。
+    parenthetical: ''
+    element_id: D011
+  - type: action
+    description: 可这一等，就是十年。
+    element_id: A012
+  scene_id: S001
+- heading: 日内 城门
+  description: 城门人来人往，阳光透过城门洒在地面上，城匾斑驳，映衬着风尘仆仆的男子。
+  elements:
+  - type: action
+    description: 一个风尘仆仆的男子站在城门前，望着那块斑驳的城匾，神情复杂。
+    element_id: A001
+  - type: dialogue
+    character: 顾言卿
+    line: 澜州，我终于回来了。
+    parenthetical: ''
+    element_id: D002
+  - type: action
+    description: 顾言卿握紧腰间的长剑，深吸一口气，准备迈入城中。
+    element_id: A003
+  scene_id: S002
+- heading: 日内 城市街道
+  description: 城市街道熙熙攘攘，人群来往，顾言卿融入人流之中，心中只有一个名字在回荡。
+  elements:
+  - type: action
+    description: 顾言卿整了整衣衫，迈步走入城中。无论如何，他都要再见她一面。
+    element_id: A001
+  - type: dialogue
+    character: 顾言卿
+    line: 晚棠……你还好吗？
+    parenthetical: （眼神柔和）
+    element_id: D002
   scene_id: S003
-- heading: 夜内 402室
-  description: 半夜，林晚棠被一阵凉意惊醒，发现卫生间的灯亮着，镜子里映出诡异的景象。
+- heading: 侯府后花园
+  description: 林晚棠独自赏花，小翠匆匆跑来告知顾言卿回来的消息。
   elements:
   - type: action
-    description: 林晚棠看到卫生间镜子里的异象，无法动弹，目睹小女孩的诡异行为。
+    description: 林晚棠手中的花枝微微一颤，表现出内心的震动。
     element_id: A001
   - type: dialogue
-    character: 小女孩
-    line: 藏起来了，他们把我的眼睛藏起来了。姐姐，你能帮我找找吗？
-    parenthetical: (模糊而恳求)
-    element_id: D002
-  - type: dialogue
-    character: 小女孩
-    line: 你在看我，对不对？
-    parenthetical: (咧嘴笑)
-    element_id: D003
-  scene_id: S004
-- heading: 日内 402室
-  description: 林晚棠在房间内重新审视周围环境，发现了地板下的暗格。
-  elements:
-  - type: action
-    description: 林晚棠趴在地板上，用手指敲击木地板，发现床头柜下面的地板声音不同。她用刀尖撬开地板，露出一个浅浅的暗格。
-    element_id: A001
-  - type: action
-    description: 林晚棠从暗格中拿出一本粉色的日记本，上面画着卡通小猫。她开始阅读日记内容。
-    element_id: A002
-  - type: dialogue
-    character: 小女孩（幽灵）
-    line: 今天妈妈又哭了。爸爸说要把我送去奶奶家。我不想走。我把玻璃珠藏在了一个谁也找不到的地方。
-    parenthetical: ''
-    element_id: D003
-  - type: dialogue
-    character: 小女孩（幽灵）
-    line: 他们把我的眼睛藏起来了。我好疼。姐姐说她会帮我找，可是她后来也走了。
-    parenthetical: ''
-    element_id: D004
-  scene_id: S005
-- heading: 日内 卫生间
-  description: 林晚棠在卫生间找到了两颗玻璃弹珠，解开了谜团。
-  elements:
-  - type: action
-    description: 林晚棠冲进卫生间，撬开松动的地砖，发现两颗玻璃弹珠躺在下面。一颗蓝，一颗绿。
-    element_id: A001
-  - type: dialogue
-    character: 小女孩（幽灵）
-    line: 找到了。
-    parenthetical: ''
+    character: 小翠
+    line: 小姐，顾家少爷回来了！听说他十年前去了边关，前几日刚回来。
+    parenthetical: （兴奋）
     element_id: D002
   - type: action
-    description: 林晚棠转身，把玻璃弹珠还给了小女孩的幽灵。
+    description: 林晚棠沉默片刻，表现出内心的犹豫和思考。
     element_id: A003
   - type: dialogue
-    character: 林晚棠
-    line: 还给你。你妈妈给你的，一直都在这里。
-    parenthetical: 哽咽
+    character: 小翠
+    line: 要不您去顾府拜访一下？两家毕竟是世交……
+    parenthetical: （眨眨眼，调皮）
     element_id: D004
-  scene_id: S006
+  - type: dialogue
+    character: 顾言卿
+    line: 不必了，我已经来了。
+    parenthetical: ''
+    element_id: D005
+  - type: action
+    description: 林晚棠猛然转身，看见顾言卿站在不远处微笑，内心充满复杂的情绪。
+    element_id: A006
+  - type: dialogue
+    character: 顾言卿
+    line: 晚棠，我回来了。
+    parenthetical: ''
+    element_id: D007
+  scene_id: S004
