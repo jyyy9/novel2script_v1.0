@@ -17,12 +17,12 @@
 
 ## 📦 依赖库列表
 
-| 库名 | 版本要求 | 用途 |
-|------|----------|------|
-| openai | >= 1.0.0 | 调用 OpenAI API |
-| pyyaml | >= 6.0 | YAML 文件处理 |
-| tenacity | >= 8.0 | 重试机制 |
-| gradio | >= 4.0 | Web 界面 |
+| 库名       | 版本要求     | 用途            |
+| -------- | -------- | ------------- |
+| openai   | >= 1.0.0 | 调用 OpenAI API |
+| pyyaml   | >= 6.0   | YAML 文件处理     |
+| tenacity | >= 8.0   | 重试机制          |
+| gradio   | ==3.50.2 | Web 界面        |
 
 ## 🛠️ 安装步骤
 
@@ -51,10 +51,10 @@ export OPENAI_API_KEY=your_api_key_here
 
 ### 可选环境变量
 
-| 变量名 | 默认值 | 说明 |
-|--------|--------|------|
-| OPENAI_MODEL | gpt-3.5-turbo | 使用的模型名称 |
-| OPENAI_API_BASE | https://api.openai.com/v1 | API 端点地址 |
+| 变量名               | 默认值                         | 说明       |
+| ----------------- | --------------------------- | -------- |
+| OPENAI\_MODEL     | gpt-3.5-turbo               | 使用的模型名称  |
+| OPENAI\_API\_BASE | <https://api.openai.com/v1> | API 端点地址 |
 
 ## 🚀 运行方式
 
@@ -64,9 +64,10 @@ export OPENAI_API_KEY=your_api_key_here
 python app.py
 ```
 
-启动后在浏览器中打开显示的本地地址（默认 http://127.0.0.1:7860）。
+启动后在浏览器中打开显示的本地地址（默认 <http://127.0.0.1:7860）。>
 
 **界面预览：**
+
 - 左侧：小说原文输入框 + 角色卡上传
 - 右侧：剧本预览 + 下载按钮
 - 点击「生成剧本」一键转换
@@ -79,13 +80,13 @@ python main.py --input novel.txt --output script.yaml --author "鲁迅" --profil
 
 #### 参数说明
 
-| 参数 | 说明 | 必填 |
-|------|------|------|
-| --input | 输入小说文本文件路径 | ✅ 是 |
-| --output | 输出 YAML 文件路径 | ❌ 否 |
-| --author | 原作者署名 | ❌ 否（默认"未知作者"） |
-| --profiles | 角色卡 JSON 文件路径 | ❌ 否 |
-| --version | 显示版本号 | ❌ 否 |
+| 参数         | 说明            | 必填            |
+| ---------- | ------------- | ------------- |
+| --input    | 输入小说文本文件路径    | ✅ 是           |
+| --output   | 输出 YAML 文件路径  | ❌ 否           |
+| --author   | 原作者署名         | ❌ 否（默认"未知作者"） |
+| --profiles | 角色卡 JSON 文件路径 | ❌ 否           |
+| --version  | 显示版本号         | ❌ 否           |
 
 ## 📖 使用示例
 
