@@ -1,3 +1,10 @@
+"""
+AI 转换模块
+
+使用 OpenAI API 将小说章节转换为剧本格式。
+支持角色卡注入、自动分段处理和重试机制。
+"""
+
 import json
 import os
 
@@ -6,7 +13,27 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 
 
 class AIConverter:
+    """
+    AI 小说转剧本转换器。
+
+    负责调用 OpenAI API 将小说章节转换为剧本场景。
+    支持：
+    - 从环境变量或参数读取 API 配置
+    - 角色卡信息注入到提示词
+    - 超长章节自动分段处理
+    - API 调用失败自动重试（指数退避）
+    """
+
     def __init__(self, api_key: str = None, model: str = None, api_base: str = None):
+        """
+        初始化 AIConverter。
+
+        Args:
+            api_key: OpenAI API Key，优先使用传入值，否则读取环境变量 OPENAI_API_KEY
+            model: 模型名称，默认 gpt-3.5-turbo，可通过 OPENAI_MODEL 环境变量覆盖
+            api_base: API 端点地址，默认 https://api.openai.com/v1，
+                      可通过 OPENAI_API_BASE 环境变量覆盖
+        """
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
         self.model = model or os.environ.get("OPENAI_MODEL", "gpt-3.5-turbo")
         self.api_base = api_base or os.environ.get(
@@ -14,17 +41,25 @@ class AIConverter:
         )
         self._characters_str = ""
 
+        # 兼容 openai v1.x：使用 OpenAI 客户端
         try:
             from openai import OpenAI as _OpenAI
 
             self._use_client = True
             self.client = _OpenAI(api_key=self.api_key, base_url=self.api_base)
         except Exception:
+            # 降级为 v0.x 写法：直接设置模块级属性
             self._use_client = False
             openai.api_key = self.api_key
             openai.api_base = self.api_base
 
     def set_characters(self, profiles: list[dict]):
+        """
+        设置角色列表，将其格式化为字符串追加到 system prompt。
+
+        Args:
+            profiles: 角色列表，每个角色包含 name, gender, age, personality, notes 等字段
+        """
         if not profiles:
             self._characters_str = ""
             return
@@ -52,6 +87,12 @@ class AIConverter:
         self._characters_str = "\n已知角色：" + "；".join(char_lines)
 
     def _build_system_prompt(self) -> str:
+        """
+        构建系统提示词。
+
+        Returns:
+            包含角色信息的完整 system prompt
+        """
         base = (
             '你是一个专业编剧，将小说章节转换为剧本元素。输出严格符合以下 JSON 结构：'
             '{"scenes":[{"heading":"场标（如：日内 书房）","description":"场景环境描写",'
@@ -64,6 +105,16 @@ class AIConverter:
         return base
 
     def _split_text(self, text: str, max_chars: int = 2000) -> list[str]:
+        """
+        按段落分割文本，每段不超过指定字符数。
+
+        Args:
+            text: 要分割的文本
+            max_chars: 每段最大字符数，默认 2000
+
+        Returns:
+            分割后的文本段列表
+        """
         paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
 
         segments = []
@@ -75,6 +126,7 @@ class AIConverter:
                 if current:
                     segments.append(current)
                 if len(para) > max_chars:
+                    # 超长段落直接按字符切分
                     for i in range(0, len(para), max_chars):
                         segments.append(para[i:i + max_chars])
                     current = ""
@@ -92,6 +144,18 @@ class AIConverter:
         reraise=True,
     )
     def _api_call(self, messages: list[dict]) -> str:
+        """
+        调用 OpenAI API，带重试机制。
+
+        Args:
+            messages: 消息列表，包含 role 和 content
+
+        Returns:
+            API 返回的内容字符串
+
+        Raises:
+            Exception: API 调用失败时抛出异常
+        """
         if self._use_client:
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -112,6 +176,18 @@ class AIConverter:
     def _convert_segment(
         self, segment: str, segment_idx: int, total: int, chapter_title: str
     ) -> dict:
+        """
+        转换章节的一个分段。
+
+        Args:
+            segment: 当前分段文本
+            segment_idx: 当前分段序号（从1开始）
+            total: 总分段数
+            chapter_title: 章节标题
+
+        Returns:
+            包含 scenes 的字典，失败时返回空字典
+        """
         try:
             system_content = self._build_system_prompt() + (
                 f"\n这是同一章节「{chapter_title}」的第 {segment_idx}/{total} 部分，"
@@ -130,6 +206,23 @@ class AIConverter:
             return {}
 
     def convert_chapter(self, title: str, content: str) -> dict:
+        """
+        将小说章节转换为剧本场景。
+
+        如果章节内容超过 2000 字符，会自动分段处理，最后合并场景。
+
+        Args:
+            title: 章节标题
+            content: 章节内容
+
+        Returns:
+            包含 scenes 列表的字典，失败时返回空字典
+
+        Example:
+            >>> converter = AIConverter(api_key="your_key")
+            >>> result = converter.convert_chapter("第一章 开始", "内容...")
+            >>> print(result["scenes"])
+        """
         try:
             threshold = 2000
             if len(content) <= threshold:
