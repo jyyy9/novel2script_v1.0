@@ -12,6 +12,7 @@ class AIConverter:
         self.api_base = api_base or os.environ.get(
             "OPENAI_API_BASE", "https://api.openai.com/v1"
         )
+        self._characters_str = ""
 
         # 兼容 openai v1.x：使用 OpenAI 客户端
         try:
@@ -25,6 +26,38 @@ class AIConverter:
             openai.api_key = self.api_key
             openai.api_base = self.api_base
 
+    def set_characters(self, profiles: list[dict]):
+        """
+        设置角色列表，将其格式化为字符串以便追加到 system prompt。
+
+        profiles: 角色列表，每个角色包含 name, gender, age, personality, notes 等字段。
+        """
+        if not profiles:
+            self._characters_str = ""
+            return
+
+        char_lines = []
+        for profile in profiles:
+            name = profile.get("name", "未知")
+            gender = profile.get("gender", "")
+            age = profile.get("age", "")
+            personality = profile.get("personality", "")
+            notes = profile.get("notes", "")
+
+            parts = [f"{name}"]
+            if gender:
+                parts.append(f"，{gender}")
+            if age:
+                parts.append(f"，{age}岁")
+            if personality:
+                parts.append(f"，性格{personality}")
+            if notes:
+                parts.append(f"，{notes}")
+
+            char_lines.append("".join(parts))
+
+        self._characters_str = "\n已知角色：" + "；".join(char_lines)
+
     def convert_chapter(self, title: str, content: str) -> dict:
         try:
             system_content = (
@@ -34,6 +67,10 @@ class AIConverter:
                 '{"type":"dialogue","character":"角色名","line":"对白",'
                 '"parenthetical":"（情绪提示，可选）"}]}]}'
             )
+
+            if self._characters_str:
+                system_content += self._characters_str
+
             user_content = f"章节标题：{title}\n内容：\n{content}"
 
             if self._use_client:

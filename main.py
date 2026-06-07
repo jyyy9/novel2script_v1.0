@@ -7,6 +7,7 @@ from chapter_splitter import split_chapters
 from ai_converter import AIConverter
 from script_builder import build_script
 from yaml_writer import script_to_yaml
+from character_profile import load_profiles
 
 
 def main():
@@ -14,6 +15,7 @@ def main():
     parser.add_argument('--input', required=True, help='Input novel text file path')
     parser.add_argument('--output', help='Output YAML file path (optional)')
     parser.add_argument('--author', default="未知作者", help='Original author name')
+    parser.add_argument('--profiles', help='Character profiles JSON file path')
     args = parser.parse_args()
 
     # 读取输入文件
@@ -35,6 +37,15 @@ def main():
 
     # 创建 AIConverter 实例
     converter = AIConverter()
+
+    # 如果提供了角色卡文件，加载并设置
+    if args.profiles:
+        profiles = load_profiles(args.profiles)
+        if profiles:
+            print(f"已加载 {len(profiles)} 个角色")
+            converter.set_characters(profiles)
+        else:
+            print(f"警告：未能加载角色卡 {args.profiles}")
 
     # 逐章调用 AI 转换，收集结果
     chapters_results = []
