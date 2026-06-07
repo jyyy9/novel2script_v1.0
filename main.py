@@ -1,6 +1,8 @@
 import argparse
 import sys
 
+from chapter_splitter import split_chapters
+
 
 def main():
     parser = argparse.ArgumentParser(description='Novel2Script - Convert novel text to script')
@@ -10,7 +12,11 @@ def main():
     with open(args.input, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    print(content)
+    chapters = split_chapters(content)
+    for chapter in chapters:
+        print(f"【{chapter['title']}】")
+        print(chapter['content'][:100])
+        print('---')
 
 
 if __name__ == '__main__':
