@@ -1,0 +1,159 @@
+metadata:
+  author: 未知作者
+  total_scenes: 12
+scenes:
+- heading: 巷口
+  description: 雨夜中的巷口，昏黄的路灯下，林晚棠站在那里。
+  elements:
+  - type: action
+    description: 林晚棠提着半湿的行李箱，看着手机上的地址和面前的老居民楼。
+    element_id: A001
+  - type: dialogue
+    character: 老人
+    line: 姑娘，找人啊？
+    parenthetical: （苍老的声音）
+    element_id: D002
+  scene_id: S001
+- heading: 402号房门口
+  description: 林晚棠与老人交谈后，来到402号房门口。
+  elements:
+  - type: action
+    description: 林晚棠向老人展示手机上的地址，老人回应她的租房情况。
+    element_id: A001
+  - type: dialogue
+    character: 林晚棠
+    line: 便宜嘛，学生党，穷。
+    parenthetical: （勉强笑容）
+    element_id: D002
+  scene_id: S002
+- heading: 402号房间内
+  description: 林晚棠进入402号房间，感受到房间的陈旧和潮湿。
+  elements:
+  - type: action
+    description: 林晚棠打开房门，感受到房间的气味和环境。
+    element_id: A001
+  - type: dialogue
+    character: 林晚棠
+    line: 没事的，老房子，风。
+    parenthetical: （深呼吸）
+    element_id: D002
+  scene_id: S003
+- heading: 卫生间
+  description: 林晚棠在卫生间洗漱时，听到客厅传来的脚步声。
+  elements:
+  - type: action
+    description: 林晚棠在卫生间里洗漱，镜子里看到自己的陌生脸色。
+    element_id: A001
+  - type: dialogue
+    character: 声音
+    line: 姐姐，你看见我的眼睛了吗？
+    parenthetical: （细细的声音）
+    element_id: D002
+  scene_id: S004
+- heading: 林晚棠的公寓 - 卫生间
+  description: 林晚棠在公寓的卫生间里面对着磨砂玻璃门外的模糊影子，感受到了一阵恐惧。
+  elements:
+  - type: action
+    description: 林晚棠盯着磨砂玻璃门外的模糊轮廓，手里的牙刷掉进了洗脸池。
+    element_id: A001
+  - type: dialogue
+    character: 影子
+    line: 姐姐，你看见我的眼睛了吗？
+    parenthetical: （细细的声音，像是从很远的地方传来）
+    element_id: D002
+  scene_id: S005
+- heading: 林晚棠的公寓 - 客厅
+  description: 林晚棠在公寓的客厅里感受到了脚步声的靠近，带来了更多的恐惧和紧张。
+  elements:
+  - type: action
+    description: 林晚棠听到了轻轻的脚步声，仿佛有人在房间里小心翼翼地移动。
+    element_id: A001
+  - type: dialogue
+    character: 影子
+    line: 姐姐，你看见我的眼睛了吗？
+    parenthetical: （细细的声音，像是直接贴着她的耳朵在说话）
+    element_id: D002
+  scene_id: S006
+- heading: 林晚棠的公寓 - 卫生间
+  description: 林晚棠在公寓卫生间内洗脸，突然听到客厅传来脚步声。
+  elements:
+  - type: action
+    description: 林晚棠深吸一口气，用力打开门把手，走进卫生间洗脸。
+    element_id: A001
+  - type: action
+    description: 水龙头里的水是铁锈色的，她放了一会儿才变清。
+    element_id: A002
+  - type: action
+    description: 林晚棠看着镜子里自己苍白的脸色。
+    element_id: A003
+  - type: action
+    description: 客厅传来轻轻的脚步声，停在卫生间门口。
+    element_id: A004
+  - type: dialogue
+    character: 林晚棠
+    line: 姐姐，你看见我的眼睛了吗？
+    parenthetical: （细细的声音）
+    element_id: D005
+  scene_id: S007
+- heading: 林晚棠的公寓 - 客厅
+  description: 林晚棠在客厅听到了奇怪的声音，感到不寒而栗。
+  elements:
+  - type: action
+    description: 林晚棠听到敲门声，像指甲刮玻璃般的摩擦声。
+    element_id: A001
+  - type: dialogue
+    character: 林晚棠
+    line: 姐姐，你看见我的眼睛了吗？
+    element_id: D002
+  - type: action
+    description: 林晚棠后背撞在墙上，捂住嘴不让自己叫出声。
+    element_id: A003
+  scene_id: S008
+- heading: 林晚棠抵达公寓前
+  description: 林晚棠抵达公寓前，遇到一位神秘老人，引发了一些不寻常的对话。
+  elements:
+  - type: action
+    description: 林晚棠提着行李箱站在公寓巷口，心里有点发凉。
+    element_id: A001
+  - type: dialogue
+    character: 老人
+    line: 姑娘，找人啊？
+    element_id: D002
+  - type: dialogue
+    character: 林晚棠
+    line: 我租了这里的房子，402。
+    element_id: D003
+  - type: action
+    description: 老人看了她一眼，慢慢缩回窗户，留下一丝若有若无的叹息声。
+    element_id: A004
+  scene_id: S009
+- heading: 房间内
+  description: 房间不大，墙上贴着发黄的碎花壁纸，靠窗的角落立着一张空荡荡的单人床。窗帘是一块厚重的暗红色绒布，遮挡住外面的雨夜。
+  elements:
+  - type: action
+    description: 林晚棠放下行李箱，走过去想把窗帘拉开透透气。手指刚触到窗帘，身后的门突然自己关上了。
+    element_id: A001
+  - type: action
+    description: 林晚棠转身，发现房间安静，只有雨水打在玻璃上的声音。她试图推开关上的门，但门像被外面的东西抵住了。
+    element_id: A002
+  - type: action
+    description: 林晚棠深呼吸，用力把门把手向下一压，门轻易地打开。走廊里空无一人，声控灯依旧暗着。
+    element_id: A003
+  - type: action
+    description: 林晚棠关上门，反锁了两道。她没有再碰窗帘，拿出洗漱用品，走进狭小的卫生间。
+    element_id: A004
+  scene_id: S010
+- heading: 卫生间
+  description: 卫生间里水龙头的水是铁锈色的，经过一段时间才变清。林晚棠洗了把脸，抬头看着镜子里自己苍白的脸色。
+  elements:
+  - type: action
+    description: 林晚棠洗了把脸，抬头看着镜子里自己苍白的脸色。
+    element_id: A001
+  scene_id: S011
+- heading: 客厅
+  description: 客厅里传来了轻轻的脚步声，像有人赤着脚在木地板上小心翼翼地走动。声音停在卫生间门口。
+  elements:
+  - type: action
+    description: 林晚棠僵住了，盯着卫生间门外的模糊轮廓。
+    element_id: A001
+  scene_id: S012
