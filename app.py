@@ -4,10 +4,10 @@ import tempfile
 
 import gradio as gr
 
-from chapter_splitter import split_chapters
-from ai_converter import AIConverter
-from script_builder import build_script
-from yaml_writer import script_to_yaml
+from src.novel2script.chapter_splitter import split_chapters
+from src.novel2script.ai_converter import AIConverter
+from src.novel2script.script_builder import build_script
+from src.novel2script.yaml_writer import script_to_yaml
 
 
 def convert_novel_to_script(novel_text: str, profiles_file) -> tuple[str, str]:

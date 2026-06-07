@@ -9,11 +9,11 @@ import json
 import os
 import sys
 
-from chapter_splitter import split_chapters
-from ai_converter import AIConverter
-from script_builder import build_script
-from yaml_writer import script_to_yaml
-from character_profile import load_profiles
+from src.novel2script.chapter_splitter import split_chapters
+from src.novel2script.ai_converter import AIConverter
+from src.novel2script.script_builder import build_script
+from src.novel2script.yaml_writer import script_to_yaml
+from src.novel2script.character_profile import load_profiles
 
 __version__ = "1.2.0"
 
