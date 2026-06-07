@@ -1,0 +1,130 @@
+metadata:
+  author: 鲁迅
+  total_scenes: 9
+scenes:
+- heading: 日内 江城老居民楼巷口
+  description: 雨夜，林晚棠站在巷口，昏黄的路灯下，遇到了老人。
+  elements:
+  - type: action
+    description: 林晚棠提着半湿的行李箱，老人从窗户里探出头来。
+    element_id: A001
+  - type: dialogue
+    character: 老人
+    line: 姑娘，找人啊？
+    parenthetical: ''
+    element_id: D002
+  - type: dialogue
+    character: 林晚棠
+    line: 我租了这里的房子，402。
+    parenthetical: ''
+    element_id: D003
+  - type: action
+    description: 老人笑了，林晚棠勉强笑了笑，老人缩回窗户。
+    element_id: A004
+  scene_id: S001
+- heading: 日内 江城老居民楼房间
+  description: 林晚棠进入房间，发现房间陈旧，窗帘紧闭。
+  elements:
+  - type: action
+    description: 林晚棠打开房门，进入房间，感受到潮湿的气味。
+    element_id: A001
+  - type: dialogue
+    character: ''
+    line: 房间里只有雨声和她的呼吸声。
+    parenthetical: ''
+    element_id: D002
+  - type: action
+    description: 林晚棠感到有人走动，门被轻轻关上。
+    element_id: A003
+  scene_id: S002
+- heading: 日内 江城老居民楼房间
+  description: 林晚棠在卫生间洗漱时，听到了脚步声。
+  elements:
+  - type: action
+    description: 林晚棠在卫生间洗漱，听到客厅传来轻微的脚步声。
+    element_id: A001
+  - type: dialogue
+    character: ''
+    line: 林晚棠感到紧张，牙刷掉进洗脸池。
+    parenthetical: ''
+    element_id: D002
+  - type: action
+    description: 门外传来敲门声，声音细细，令人毛骨悚然。
+    element_id: A003
+  scene_id: S003
+- heading: 日内 402号房卧室
+  description: 林晚棠在自己的卧室里经历了一系列恐怖的事件。
+  elements:
+  - type: action
+    description: 林晚棠在房间里打扫卫生，换上新锁，试图消除恐惧。
+    element_id: A001
+  - type: action
+    description: 林晚棠洗澡换衣，坐在床上追剧，感到孤单但并不害怕。
+    element_id: A002
+  - type: action
+    description: 半夜被凉意惊醒，发现窗户被风吹开，卫生间的灯亮着。
+    element_id: A003
+  - type: dialogue
+    character: 小女孩（镜中幻影）
+    line: 藏起来了，他们把我的眼睛藏起来了。姐姐，你能帮我找找吗？
+    parenthetical: （模糊的声音）
+    element_id: D004
+  - type: dialogue
+    character: 小女孩（镜中幻影）
+    line: 你在看我，对不对？
+    parenthetical: ''
+    element_id: D005
+  scene_id: S004
+- heading: 日内 卧室
+  description: 林晚棠坐在床上，面对着手边的菜刀和窗外灰蒙蒙的天光。她的眼睛红肿，嘴唇干裂，但神情已经从恐惧变成了一种近乎冷静的决绝。
+  elements:
+  - type: action
+    description: 林晚棠声音沙哑地自言自语，表达对房租和房子问题的担忧。
+    element_id: A001
+  scene_id: S005
+- heading: 日内 物业办公室
+  description: 林晚棠询问物业大姐关于402房间的历史，大姐嗑着瓜子告诉她一些信息。
+  elements:
+  - type: dialogue
+    character: 物业大姐
+    line: 这房子本身没问题，就是吧……以前住这儿的有个小姑娘，出了点意外，后来这房子就不太平了。但都是传言，传言。
+    parenthetical: (嗑瓜子的动作停顿)
+    element_id: D001
+  - type: action
+    description: 林晚棠询问关于房子问题，大姐避免继续谈论。
+    element_id: A002
+  scene_id: S006
+- heading: 日内 402房间
+  description: 林晚棠以侦探的眼光重新审视402房间，最终发现了地板下的暗格。
+  elements:
+  - type: action
+    description: 林晚棠敲击木地板，发现床头柜下面那块地板声音异常。
+    element_id: A001
+  - type: action
+    description: 林晚棠用刀尖撬开地板，发现暗格内放着一本日记本。
+    element_id: A002
+  - type: dialogue
+    character: 小女孩（日记中）
+    line: 今天妈妈又哭了。爸爸说要把我送去奶奶家。我不想走。我把玻璃珠藏在了一个谁也找不到的地方。
+    parenthetical: (日记内容)
+    element_id: D003
+  scene_id: S007
+- heading: 日内 卫生间
+  description: 林晚棠在卫生间找到了两颗玻璃弹珠，与日记中描述的相符。
+  elements:
+  - type: action
+    description: 林晚棠撬开卫生间地砖，找到了两颗玻璃弹珠。
+    element_id: A001
+  - type: dialogue
+    character: 小女孩的影子
+    line: 找到了。还给你。你妈妈给你的，一直都在这里。
+    parenthetical: (影子消散)
+    element_id: D002
+  scene_id: S008
+- heading: 日内 卧室
+  description: 林晚棠回到卧室，将日记本小心地放在枕边，发信息给房东。
+  elements:
+  - type: action
+    description: 林晚棠打开手机，给房东发消息询问小姑娘的名字。
+    element_id: A001
+  scene_id: S009
